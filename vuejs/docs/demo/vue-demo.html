@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<title>vue demo</title>
+	<script type="text/javascript" src="./lib/vue.js"></script>
+</head>
+<body>
+	<h3>two-way双向绑定</h3>
+	<div id="app" v-on:click="setMessage" style="border: 2px solid #ccc; padding: 10px; width: 400px;">
+	  <p>{{ message }}</p>
+	  <input v-model="message">
+	</div>
+	<script type="text/javascript">
+	var vm = new Vue({
+	  el: '#app',
+	  methods:{
+	  	setMessage: function (argument) {
+	  		this.message = "click set message";
+	  	}
+	  },
+	  data: {
+	    message: 'Hello Vue.js!'
+	  }
+	})
+	</script>
+
+
+	<h3>one-way单向绑定</h3>
+	<div id="app-single">
+	  {{ msg }}
+	</div>
+	<script type="text/javascript">
+	/*var vmsg = new Vue({
+	  el: '#app-single',
+	  data: {
+	    msg: 'Hello Vue.js!'
+	  }
+	})*/
+	</script>
+</body>
+</html>

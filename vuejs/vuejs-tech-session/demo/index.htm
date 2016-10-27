@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>vuejs demo</title>
+        <script type="text/javascript" src="./lib/vue.js"></script>
+    </head>
+    <body>
+        <div id="demo">
+          <p>{{message}}</p>
+          <input v-model="message">
+          <p>
+            {{val}}
+          </p>
+          <p>hello, vue js!!</p>
+        </div>
+        <script type="text/javascript">
+            var demo = new Vue({
+                  el: '#demo',
+                  data: {
+                    message: 'Hello Vue.js!',
+                    proxyData: 123
+                  },
+                  props: {
+                    val: {
+                      type: String,
+                      default: "in value"
+                    }
+                  },
+                  methods: {
+                    send: function() {
+                      console.log("send message");
+                    }
+                  }
+            });
+        </script>
+    </body>
+</html>
